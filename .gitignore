@@ -24,4 +24,7 @@ dist-ssr
 *.sw?
 
 
-config.py
+.env
+__pycache__/
+*.pyc
+venv
