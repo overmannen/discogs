@@ -10,7 +10,7 @@ app = FastAPI()
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:5173"],
+    allow_origins=["http://localhost:5173", "https://discogs.lyngner.com"],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
@@ -60,8 +60,8 @@ def get_collection(force_refresh: bool = False):
 
         value_str = me.collection_value.median
         value_float = float(value_str.replace("€", "").replace(",", ""))
-        value_int = c.convert(value_float, "EUR", "NOK")
-        value = f"{value_int}kr"
+        value = c.convert(value_float, "EUR", "NOK")
+        value = f"{value:.1f}kr"
 
         for lp in my_collection.releases:
             release = lp.release

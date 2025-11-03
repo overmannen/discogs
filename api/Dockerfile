@@ -1,15 +1,15 @@
 
 FROM python:3.11.14
 
-WORKDIR /code
+WORKDIR /app
 
-COPY ./requirements.txt /code/requirements.txt
-
-
-RUN pip install --no-cache-dir --upgrade -r /code/requirements.txt
+COPY ./requirements.txt /app/requirements.txt
 
 
-COPY ./ /code/api
+RUN pip install --no-cache-dir --upgrade -r /app/requirements.txt
+
+
+COPY . /app
 
 
 CMD ["python", "api/main.py"]
