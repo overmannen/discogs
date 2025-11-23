@@ -2,15 +2,7 @@
 
 My LP collection from Discogs displayed in a React carousel.
 
-Built with the Discogs API using `python3-discogs-client` and currency conversion with `currencyapi`.
-
-## Installation
-
-### Backend dependencies
-
-```bash
-pip install -r requirements.txt
-```
+Built with the Discogs API using `python3-discogs-client` and currency conversion with `currencyapicom`.
 
 ### Frontend dependencies
 
@@ -23,7 +15,7 @@ npm install
 ### Start the API server
 
 ```bash
-python main.py
+docker compose up -d
 ```
 
 The server will run on `http://localhost:8000`
